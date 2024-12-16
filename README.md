@@ -66,6 +66,6 @@ Access simplified dashboard from <a href='https://github.com/sindhubommali01/You
 
 Following are project execution screenshot from AWS portal.
 
-<img src="https://github.com/sindhubommali01/Youtube_Data_Pipeline_AWS/blob/main/assets/S3_Buckets.png" width=900 height=400>
+<img src="https://github.com/sindhubommali01/Youtube_Data_Pipeline_AWS/blob/main/assets/S3_Buckets.png" >
 <br>
 
