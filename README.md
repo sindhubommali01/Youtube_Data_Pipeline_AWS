@@ -1,5 +1,4 @@
 
----
 
 <h4 align='center'> Leveraging <a href='https://aws.amazon.com/' target='_blank'>AWS Cloud Services,</a> an ETL pipeline transforms YouTube video statistics data. Data is downloaded from <a href='https://kaggle.com/datasnaek/youtube-new'>Kaggle</a>, uploaded to an S3 bucket, and cataloged using AWS Glue for querying with Athena. AWS Lambda converts to Parquet format and stores it in a clean S3 bucket. AWS QuickSight then visualizes the materialised data, providing insights into YouTube video performance. </h4>
 
@@ -14,23 +13,20 @@ Data is first stored in a raw S3 bucket, then cleaned and organized in a cleanse
 
 The repository directory structure is as follows:
 ```
-├── assets/                        <- Includes assets for the repo.
+├── assets/                        
 │   └── (Contains images, architecture and quicksight dashboard)
 │
-├── data/                          <- Contains data used and processed by the project.
-│   ├── raw/                      <- Raw data files (not included here due to large files size).
-│   ├── cleansed/                 <- Cleansed data files.
-│   └── analytics/                <- Materialized view for analytics and reporting.
+├── data/                          
+│   ├── rawdataset/                     
+│   ├── cleanseddataset/                 
+│   └── data_analytics/
 │
-├── docs/                          <- Documentation for the project.
-│   └── solution methodology.pdf   <- Detailed project documentation.
+├── scripts/                                      
+│   ├── etl_pipeline_csv_to_parquet.py             
+│   ├── lambda_function.py                        
+│   └── etl_S3_test_event.py         
 │
-├── scripts/                                       <- Python scripts for the ETL pipeline.
-│   ├── etl_pipeline_csv_to_parquet.py             <- csv to parquet pipeline glue script.
-│   ├── lambda_function.py                         <- Lambda function code.
-│   └── etl_pipeline_materialised_view.py          <- materialised view pipeline glue script
-│
-├── README.md                      <- The top-level README for developers using this project.
+├── README.md                      
 
 ```
 
@@ -63,39 +59,13 @@ Following is the architecture of the project.
 
 ## Dashboard
 
-Access simplified dashboard from <a href='https://github.com/waqarg2001/Youtube-Data-Pipeline-AWS/blob/main/assets/dashboard.pdf'>here</a>.
+Access simplified dashboard from <a href='https://github.com/sindhubommali01/Youtube_Data_Pipeline_AWS/blob/main/assets/dashboard.pdf'>here</a>.
 
 
 ## Screenshots
 
-Following are project execution screenshots from AWS portal.
+Following are project execution screenshot from AWS portal.
 
-<img src="https://github.com/waqarg2001/Youtube-Data-Pipeline-AWS/blob/main/assets/ss1.png" width=900 height=400>
+<img src="https://github.com/sindhubommali01/Youtube_Data_Pipeline_AWS/blob/main/assets/S3_Buckets.png" width=900 height=400>
 <br>
-<img src="https://github.com/waqarg2001/Youtube-Data-Pipeline-AWS/blob/main/assets/ss2.png" width=900 height=400>
 
-## Support
-
-If you have any doubts, queries, or suggestions then, please connect with me on any of the following platforms:
-
-[![Linkedin Badge][linkedinbadge]][linkedin] 
-[![Gmail Badge][gmailbadge]][gmail]
-
-
-## License
-
-<a href = 'https://creativecommons.org/licenses/by-nc-sa/4.0/' target="_blank">
-    <img src="https://i.ibb.co/mvmWGkm/by-nc-sa.png" alt="by-nc-sa" border="0" width="88" height="31">
-</a>
-
-This license allows reusers to distribute, remix, adapt, and build upon the material in any medium or format for noncommercial purposes only, and only so long as attribution is given to the creator. If you remix, adapt, or build upon the material, you must license the modified material under identical terms.
-
-
-
-<!--Profile Link-->
-[linkedin]: https://www.linkedin.com/in/waqargul
-[gmail]: mailto:waqargul6@gmail.com
-
-<!--Logo Link -->
-[linkedinbadge]: https://img.shields.io/badge/waqargul-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-[gmailbadge]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
